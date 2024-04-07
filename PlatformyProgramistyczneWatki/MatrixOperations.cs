@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -9,11 +11,12 @@ namespace PlatformyProgramistyczneWatki
 {
     internal class MatrixOperations
     {
-        public static readonly object locker = new object();
-        public static void ThreadMultiply(int start, int end, Matrix m1, Matrix m2, Matrix result)
+        
+        public static void ThreadTaskMultiplication(int start, int end, Matrix m1, Matrix m2, Matrix result)
         {
             for (int i = start; i < end; i++)
             {
+                
                 int row = (int)Math.Floor((double)i / (double)result.w);
                 int col = i % result.w;
                 int? temp = 0;
@@ -24,9 +27,13 @@ namespace PlatformyProgramistyczneWatki
                 }
 
                 result.m[i] = temp;
+                
             }
         }
-        public static Matrix Multiply(Matrix m1, Matrix m2, int threadNum)
+
+
+
+        public static Tuple<Matrix, long> AsyncMultiply(Matrix m1, Matrix m2, int threadNum)
         {
             Matrix result = new Matrix(m2.w, m1.h, false);
             Thread[] threads = new Thread[threadNum];
@@ -37,7 +44,7 @@ namespace PlatformyProgramistyczneWatki
                 int end = (i + 1) * result.size / threadNum;
                 
 
-                threads[i] = new Thread(() => ThreadMultiply(start, end, m1, m2, result));
+                threads[i] = new Thread(() => ThreadTaskMultiplication(start, end, m1, m2, result));
                 threads[i].Name = String.Format("Thread: {0}", i);
                 
             }
@@ -52,20 +59,27 @@ namespace PlatformyProgramistyczneWatki
                 thread.Join();
             }
             watch.Stop();
-            Console.WriteLine($"{watch.ElapsedMilliseconds} ms.");
+
+            return Tuple.Create(result, watch.ElapsedMilliseconds);
+        }
 
 
-            //    for (int j = 0; j < result.w; j++)
-            //    {
-            //        int? elem = 0;
-            //        for (int k = 0; k < m1.w; k++)
-            //        {
-            //            elem += m1.m[j*m1.h+k] * m2.m[m2.h*k+i];
-            //        }
-            //        result.m[j*result.h+i] = elem;
-            //    }
-            //}
-            return result;
+
+        public static Tuple<Matrix, long> ParallelMultiply(Matrix m1, Matrix m2, int threadNum)
+        {
+            Matrix result = new Matrix(m2.w, m1.h, false);
+            ParallelOptions opt = new ParallelOptions(){MaxDegreeOfParallelism = threadNum};
+
+            var watch = System.Diagnostics.Stopwatch.StartNew();
+            Parallel.For(0, threadNum, opt, x =>
+            {
+                int start = x * result.size / threadNum;
+                int end = (x + 1) * result.size / threadNum;
+                ThreadTaskMultiplication(start, end, m1, m2, result);
+            });
+            watch.Stop();
+            
+            return Tuple.Create(result, watch.ElapsedMilliseconds);
         }
 
 
