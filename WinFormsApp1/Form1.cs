@@ -37,24 +37,25 @@ namespace WinFormsApp1
         {
             if (img != null)
             {
-                Thread[] boxThreads = new Thread[4];
-                boxThreads[0] = new Thread(() =>
-                {
-                    pictureBox2.Image = Edging(img);
-                });
-                boxThreads[1] = new Thread(() =>
-                {
-                    pictureBox3.Image = Graying(img);
-                });
-                boxThreads[2] = new Thread(() =>
-                {
-                    pictureBox4.Image = BlueToPink(img);
-                });
-                boxThreads[3] = new Thread(() =>
-                {
-                    pictureBox5.Image = GreenMask(img);
-                });
-
+                Thread[] boxThreads =
+                [
+                    new Thread(() =>
+                    {
+                        pictureBox2.Image = Edging(img);
+                    }),
+                    new Thread(() =>
+                    {
+                        pictureBox3.Image = Graying(img);
+                    }),
+                    new Thread(() =>
+                    {
+                        pictureBox4.Image = BlueToPink(img);
+                    }),
+                    new Thread(() =>
+                    {
+                        pictureBox5.Image = GreenMask(img);
+                    }),
+                ];
                 foreach (Thread t in boxThreads) t.Start();
                 foreach (Thread t in boxThreads) t.Join();
             }

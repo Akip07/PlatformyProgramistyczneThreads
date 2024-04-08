@@ -51,9 +51,10 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.BorderStyle = BorderStyle.FixedSingle;
             pictureBox1.Location = new Point(12, 12);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(340, 290);
+            pictureBox1.Size = new Size(340, 292);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -80,6 +81,7 @@
             // 
             // pictureBox2
             // 
+            pictureBox2.BorderStyle = BorderStyle.FixedSingle;
             pictureBox2.Location = new Point(463, 25);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(247, 203);
@@ -89,6 +91,7 @@
             // 
             // pictureBox3
             // 
+            pictureBox3.BorderStyle = BorderStyle.FixedSingle;
             pictureBox3.Location = new Point(716, 25);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(247, 203);
@@ -98,6 +101,7 @@
             // 
             // pictureBox4
             // 
+            pictureBox4.BorderStyle = BorderStyle.FixedSingle;
             pictureBox4.Location = new Point(463, 234);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(247, 203);
@@ -107,6 +111,7 @@
             // 
             // pictureBox5
             // 
+            pictureBox5.BorderStyle = BorderStyle.FixedSingle;
             pictureBox5.Location = new Point(716, 234);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(247, 203);
