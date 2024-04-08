@@ -53,14 +53,14 @@
             // 
             pictureBox1.Location = new Point(12, 12);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(248, 216);
+            pictureBox1.Size = new Size(340, 290);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
             // LoadButton
             // 
-            LoadButton.Location = new Point(266, 54);
+            LoadButton.Location = new Point(358, 54);
             LoadButton.Name = "LoadButton";
             LoadButton.Size = new Size(99, 41);
             LoadButton.TabIndex = 1;
@@ -70,7 +70,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(266, 101);
+            button1.Location = new Point(358, 101);
             button1.Name = "button1";
             button1.Size = new Size(99, 42);
             button1.TabIndex = 2;
@@ -80,36 +80,36 @@
             // 
             // pictureBox2
             // 
-            pictureBox2.Location = new Point(413, 25);
+            pictureBox2.Location = new Point(463, 25);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(159, 139);
+            pictureBox2.Size = new Size(247, 203);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 3;
             pictureBox2.TabStop = false;
             // 
             // pictureBox3
             // 
-            pictureBox3.Location = new Point(578, 25);
+            pictureBox3.Location = new Point(716, 25);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(159, 139);
+            pictureBox3.Size = new Size(247, 203);
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox3.TabIndex = 4;
             pictureBox3.TabStop = false;
             // 
             // pictureBox4
             // 
-            pictureBox4.Location = new Point(413, 170);
+            pictureBox4.Location = new Point(463, 234);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(159, 139);
+            pictureBox4.Size = new Size(247, 203);
             pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox4.TabIndex = 5;
             pictureBox4.TabStop = false;
             // 
             // pictureBox5
             // 
-            pictureBox5.Location = new Point(578, 170);
+            pictureBox5.Location = new Point(716, 234);
             pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(159, 139);
+            pictureBox5.Size = new Size(247, 203);
             pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox5.TabIndex = 6;
             pictureBox5.TabStop = false;
@@ -118,7 +118,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1010, 585);
             Controls.Add(pictureBox5);
             Controls.Add(pictureBox4);
             Controls.Add(pictureBox3);
