@@ -102,7 +102,8 @@ namespace WinFormsApp1
             {
                 for (int j = 0; j < convertPic.Cols; j++)
                 {
-                    convertPic[i, j] = new Bgr(convertPic[i, j].MCvScalar.V0 - 100, convertPic[i, j].MCvScalar.V1 + 100, convertPic[i, j].MCvScalar.V0 - 100);
+                    convertPic[i, j] = new Bgr(convertPic[i, j].MCvScalar.V0 - 100, convertPic[i, j].MCvScalar.V1 + 100,
+                        convertPic[i, j].MCvScalar.V0 - 100);
                 }
             }
             return convertPic.ToBitmap();
@@ -122,10 +123,10 @@ namespace WinFormsApp1
                 for (int j = 0; j < image.Cols; j++)
                 {
                     var num = image[i, j];
-
                     if (num.Intensity > 0)
                     {
-                        convertPic[i, j] = new Bgr(convertPic[i, j].MCvScalar.V0, convertPic[i, j].MCvScalar.V1, convertPic[i, j].MCvScalar.V0);
+                        convertPic[i, j] = new Bgr(convertPic[i, j].MCvScalar.V0, convertPic[i, j].MCvScalar.V1, 
+                            convertPic[i, j].MCvScalar.V0);
                     }
                 }
             }

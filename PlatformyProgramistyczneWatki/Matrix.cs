@@ -18,31 +18,20 @@ namespace PlatformyProgramistyczneWatki
             this.w = w;
             this.size = h * w;
             if (random)
-            {
                 Generate();
-            }
             else
-            {
                 FillZeros();
-            }
-            
         }
         void FillZeros()
         {
             for (int i = 0; i < size; i++)
-            {
                 m.Add(0);
-            }
         }
         void Generate()
         {
             Random rnd = new Random();
             for (int i = 0; i <size; i++)
-            {
                 m.Add(rnd.Next(0,10)); 
-                //m.Add(i);
-                
-            }
         }
         override public string ToString()
         {
@@ -56,12 +45,5 @@ namespace PlatformyProgramistyczneWatki
                 result += "\n";
             }
             return result;
-        }
-        public void Hi()
-        {
-            Console.WriteLine("Hello World");
-        }
-
-        
         }
 }
